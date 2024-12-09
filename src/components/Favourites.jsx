@@ -1,7 +1,12 @@
 import { Col, Container, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
 
 const Favourites = () => {
+  const favArray = useSelector((reduxState) => {
+    return reduxState.favourites.content
+  })
+
   return (
     <Container>
       <Row>
@@ -13,7 +18,19 @@ const Favourites = () => {
         </Col>
       </Row>
       <Row>
-        <Col className="my-1"></Col>
+        <Col className="my-1">
+          {favArray.map((data) => (
+            <Row
+              key={data._id}
+              className="mx-0 mt-3 p-3 align-items-center"
+              style={{ border: '1px solid #00000033', borderRadius: 4 }}
+            >
+              <Col xs={3}>
+                <Link to={`/${data.company_name}`}>{data.company_name}</Link>
+              </Col>
+            </Row>
+          ))}
+        </Col>
       </Row>
     </Container>
   )

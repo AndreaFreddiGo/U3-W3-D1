@@ -29,7 +29,7 @@ const Job = ({ data }) => {
             // dobbiamo come minimo specificare il "tipo" dell'azione
             // con una proprietà "type"
             type: 'ADD_TO_FAVS',
-            payload: bookSelected,
+            payload: data,
           })
         }}
       >
