@@ -7,7 +7,7 @@ const Job = ({ data }) => {
 
   return (
     <Row
-      className="mx-0 mt-3 p-3 align-items-center"
+      className="mx-0 mt-3 p-3 align-items-center justify-content-between"
       style={{ border: '1px solid #00000033', borderRadius: 4 }}
     >
       <Col xs={3}>
@@ -19,7 +19,7 @@ const Job = ({ data }) => {
         </a>
       </Col>
       <Col
-        xs={3}
+        xs={2}
         className="btn btn-outline-dark"
         onClick={() => {
           // da questo onClick scaturiremo un cambio di stato!
